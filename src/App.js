@@ -1,10 +1,10 @@
 import React from "react";
-import Content from "./components/content";
+import Content from "./component/Main";
 
 
 const App = () => {
     return (
-        <Content />
+        <Main />
     )
 }
 

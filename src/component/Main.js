@@ -4,14 +4,15 @@ import ClassComp from './ClassComp'
 
 
 const Main = () => {
-  const [toggle1,setToggle1] = useState(false)  
-  const [toggle2,setToggle2] = useState(false)   
-
+ const [toggle,setToggle] = useState({
+    one : false,
+    two : false
+  })
   const displayClassComp = () =>{
-    toggle1 ? setToggle1(false) : setToggle1(true)
+    toggle.one ? setToggle({...toggle,one:false}) : setToggle({...toggle,one:true}) 
   }  
   const displayFuncComp = () =>{
-    toggle2 ? setToggle2(false) : setToggle2(true)
+    toggle.two ? setToggle({...toggle,two:false})  : setToggle({...toggle,two:true}) 
   }
   return (
     <div>
@@ -29,10 +30,10 @@ const Main = () => {
 
         <div className='container container2'>
             <div id='display'>
-             { toggle1 && <FuncComp/>}   
+             { toggle.one && <FuncComp/>}   
             </div>   
             <div id='display'>
-             { toggle2 && <ClassComp/>}
+             { toggle.two && <ClassComp/>}
             </div>   
         </div>
       
